@@ -1,0 +1,402 @@
+:root {
+  --aws-orange: #f9d54c;
+  --aws-bg: rgb(65, 58, 58);
+  --aws-green: #755417;
+  --aws-dark-orange: #f69407;
+  --cell-dim: 80px;
+  --fsize: 3.8rem;
+  --fcolor: rgb(223, 81, 37);
+}
+
+/* ---------------- Home page layout ---------------- */
+.body {
+  background-color: var(--aws-bg);
+  color: wheat;
+  min-height: 100vh;
+  padding: 20px 20px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.header {
+  color: var(--aws-dark-orange);
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: #eca94a2f;
+  border-radius: 20px;
+  width: fit-content;
+  padding: 10px 30px;
+  margin: 0px auto;
+}
+
+.row {
+  margin: 30px 0px;
+  padding: 10px 10px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  flex-wrap: wrap;
+  align-items: center;
+  /* background-color: rgb(55, 92, 92); */
+}
+.col-8 {
+  display: flex;
+  justify-content: center;
+  padding: 10px 10px;
+  width: 62%;
+}
+.col-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 10px;
+  width: 31%;
+}
+@media only screen and (max-width: 600px) {
+  .col-4 {
+    width: 100%;
+  }
+}
+
+/* ---------------- friends list ---------------- */
+.users-box {
+  display: block;
+  margin-top: 0px;
+  /* flex-direction: column; */
+  width: 100%;
+}
+.title {
+  padding: 5px 5px;
+  font-size: 1.5rem;
+  background-color: rgb(85, 74, 43);
+  letter-spacing: 2px;
+}
+
+/* custom scrollbar  */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.user-list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  max-height: 300px;
+  scrollbar-width: 12px;
+  overflow-y: scroll;
+}
+
+.friend-row {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.301);
+  border-bottom: solid 1px rgb(119, 87, 27);
+  color: coral;
+  padding: 3px 3px;
+}
+
+/* ---------------- Dashboard ---------------- */
+.dashboard-box {
+  padding: 3px 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  border: 2px solid peru;
+}
+.user-info {
+  display: flex;
+  padding: 5px 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: rgb(102, 97, 27);
+  width: 45%;
+}
+.status-msg-box {
+  display: flex;
+  padding: 5px 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: rgb(107, 56, 105);
+  width: 45%;
+}
+.inner-row {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+.player {
+  display: flex;
+  padding: 5px 10px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  justify-content: left;
+  flex-wrap: wrap;
+  background-color: rgb(109, 85, 41);
+  border-bottom: solid 1px rgb(65, 35, 35);
+  width: 95.5%;
+}
+
+.winner-box {
+  padding: 10px 5px;
+  font-size: 1.7rem;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(117, 219, 58);
+  background-color: rgba(18, 23, 26, 0.425);
+  display: flex;
+  flex-direction: column;
+  transition: 1s ease;
+}
+.winner-box button {
+  margin: 10px auto;
+  padding: 3px 3px;
+  width: 100px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  background-color: rgb(211, 221, 124);
+}
+.winner-box button:focus {
+  background-color: rgb(168, 231, 65);
+  outline: none;
+}
+
+/* ---------------- Game board ---------------- */
+.cell {
+  margin: 2px 2px;
+  background-color: var(--aws-orange);
+  width: var(--cell-dim);
+  height: var(--cell-dim);
+  border: solid 1px var(--aws-dark-orange);
+  font-size: var(--fsize);
+  font-weight: 600;
+  align-items: center;
+  text-align: center;
+  color: var(--fcolor);
+  transition: 0.2s ease;
+}
+.cell:hover {
+  opacity: 0.6;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0px;
+  flex-wrap: wrap;
+  margin: 0px auto;
+  background-color: var(--aws-green);
+  max-width: calc(var(--cell-dim) * 3.6);
+  max-height: calc(var(--cell-dim) * 3.6);
+}
+
+.game-msg-box {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: fit-content;
+  padding: 5px 15px;
+  margin: 10px auto;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* --------------- user input for username --------------- */
+.input-box {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.input-box input {
+  width: 250px;
+  height: 30px;
+  margin: 10px auto;
+  background-color: rgb(211, 221, 124);
+  font-size: 1.5rem;
+  color: black;
+  font-family: monospace;
+}
+.input-box input:focus {
+  outline: none;
+}
+.input-box button {
+  margin: 10px auto;
+  background-color: coral;
+  width: 100px;
+  padding: 5px 10px;
+  /* height: 30px; */
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: 0.1s ease;
+}
+.input-box button:focus {
+  outline: none;
+  background-color: greenyellow;
+}
+
+/* -------- loading ---------- */
+.loading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+.dot1 {
+  height: 20px;
+  width: 20px;
+  margin: 10px 10px;
+  border-radius: 50%;
+  background-color: orange;
+  animation: levitate 1s ease 0s infinite;
+}
+.dot2 {
+  height: 20px;
+  width: 20px;
+  margin: 10px 10px;
+  border-radius: 50%;
+  background-color: orange;
+  animation: levitate 1s ease 0.1s infinite;
+}
+.dot3 {
+  height: 20px;
+  width: 20px;
+  margin: 10px 10px;
+  border-radius: 50%;
+  background-color: orange;
+  animation: levitate 1s ease 0.2s infinite;
+}
+.dot4 {
+  height: 20px;
+  width: 20px;
+  margin: 10px 10px;
+  border-radius: 50%;
+  background-color: orange;
+  animation: levitate 1s ease 0.4s infinite;
+}
+@keyframes levitate {
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.loading-quote {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+/* ----------- LeaderBoard ------------- */
+.ctable {
+  background-color: black;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.table-title {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: rgb(187, 120, 44);
+  border-bottom: solid 2px black;
+}
+
+.ttitle-row {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.Lrow {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: solid 1px rgb(255, 115, 0);
+}
+.Lrow .r-user {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  width: 50%;
+  padding: 5px 5px;
+}
+
+.Lrow .r-user-highlighted {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  width: 50%;
+  background-color: rgb(209, 111, 19);
+  color: black;
+  font-weight: 600;
+}
+
+.border-line {
+  width: 100%;
+  height: 2px;
+  background-color: orangered;
+  margin: 30px 0px;
+}
+
+.LB-btn {
+  margin: 10px auto;
+  padding: 5px 10px;
+  background-color: black;
+  color: orange;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.LB-btn:hover {
+  box-shadow: 0px 0px 10px rgb(117, 115, 112);
+}
+.LB-btn:focus {
+  outline: none;
+}
+
+.upper-head {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  float: left;
+}
+.upper-head input {
+  margin: 5px auto;
+  height: 25px;
+  width: 50%;
+  background-color: rgb(157, 224, 118);
+  color: black;
+  font-size: large;
+  font-weight: 400;
+}
