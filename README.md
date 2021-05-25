@@ -1,4 +1,4 @@
-# project2-jcr38(main)
+# NJIT School Assignment
 
 ## Local Setup 
 - clone the repo
